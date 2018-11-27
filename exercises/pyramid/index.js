@@ -14,6 +14,23 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+// Will always right and left pad 2
+function pyramid(n) {
+  let padAmount = n - 1;
+  let result = "";
+  for (let a = 0; a < n; a++) {
+    for (let b = a; b < padAmount; b++) {
+      result += " ";
+    }
+    let hashNumber = a * 2 + 1;
+    for (let c = 0; c < hashNumber; c++) result += "#";
+
+    for (let b = a; b < padAmount; b++) {
+      result += " ";
+    }
+    console.log(result);
+    result = "";
+  }
+}
 
 module.exports = pyramid;
