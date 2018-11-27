@@ -32,6 +32,6 @@ function palindrome(str) {
 //   return true;
 // }
 
-//Everyhelper does a boolean check on every element on the array.
+//Every helper does a boolean check on every element on the array.
 
 module.exports = palindrome;

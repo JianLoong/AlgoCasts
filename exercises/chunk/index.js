@@ -27,19 +27,27 @@
 //   return result;
 // }
 
-function chunk(array, size) {
-  let result = [];
-  //const array = array;
+// Difference between slice and splice.
+// Splice changes the array, slice does not.
+// function chunk(array, size) {
+//   let result = [];
+//   for (let i = 0; i < array.length; i = i + size) {
+//     const slice = array.slice(i, size + i);
+//     result.push(slice);
+//   }
 
-  for (let i = 0; i < array.length; i = i + size) {
-    // const clone = array.slice();
-    // const spliced = clone.splice(i, size);
-    // result.push(spliced);
-    // i = i + size - 1;
-    //result.push(array.splice(i, size));
-    //array.splice(0, size);
-    const slice = array.slice(i, size + i);
-    result.push(slice);
+//   return result;
+// }
+
+function chunk(array, size) {
+  const result = [];
+  for (let element of array) {
+    const last = result[result.length - 1];
+    if (!last || last.length === size) {
+      result.push([element]);
+    } else {
+      last.push(element);
+    }
   }
 
   return result;
